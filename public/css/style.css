@@ -1,0 +1,15 @@
+.titless{
+position: relative;
+padding-left: 30px;
+}
+.titless::before{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 20px;
+height: 50px;
+background-color: yellow;
+border-top-left-radius: 20px ;
+border-bottom-right-radius: 20px;
+}

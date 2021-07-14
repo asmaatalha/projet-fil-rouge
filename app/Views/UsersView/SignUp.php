@@ -1,29 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<?php require APPROOT . '/views/inc/header.php'; ?>
+
+<div class="">
+
     <H1>SignUp</H1>
 
-    <form action="" method="post">
-        
-        <input type="text" name="fname" placeholder="First name">
+    <form action="<?php echo URLROOT; ?>/UsersView/signUp" method="post">
+        <div class="form-group">
+            <label for="">First Name :</label>
+            <input type="text" name="fname" placeholder="First name" class="form-control">
+        </div>
 
-        <input type="text" name="lname" placeholder="Last name">
+        <div class="form-group">
+            <label for="">Last Name :</label>
+            <input type="text" name="lname" placeholder="Last name" class="form-control">
+        </div>
 
-        <input type="text" name="uname" placeholder="UserName">
+        <div class="form-group">
+            <label for="">UserName :</label>
+            <input type="text" name="uname" placeholder="UserName" class="form-control">
+        </div>
 
-        <input type="email" name="email" placeholder="Email">
+        <div class="form-group">
+            <label for="">Email :</label>
+            <input type="email" name="email" placeholder="Email" class="form-control">
+        </div>
 
-        <input type="password" name="password" placeholder="Password">
+        <div class="form-group">
+            <label for="">Password :</label>
+            <input type="password" name="password" placeholder="Password" class="form-control">
+        </div>
 
-        <input type="submit" name="submit" value="Submit">
+        <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+
+        <a href="<?php echo URLROOT;?>/UserController/Login">LogIn</a>
         
     </form>
 
-</body>
-</html>
+</div>    
+
+<?php require APPROOT . '/views/inc/footer.php'; ?>

@@ -100,10 +100,14 @@ class UserController extends Controller
     public function homePage()
     {
         $this->userSession->startSession();
-        echo "gggggg";
 
+        $recite = $this->userM->getRecites();
+
+        $data = [
+            "recites" => $recite
+        ];
         
-
+        $this->view('UsersView/HomePage', $data); 
     }
 
 }

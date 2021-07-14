@@ -7,14 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello</h1>
-    <form action="" method="post">
+    <h1>LogIn</h1>
+    <form action="<?php echo URLROOT; ?>/UsersView/Login" method="post">
 
         <input type="email" name="email" placeholder="Email">
 
         <input type="password" name="password" placeholder="Password">
 
         <input type="submit" name="submit" value="Submit">
+
+        <a href="<?php echo URLROOT;?>/UserController/SignUp">SignUp</a>
         
     </form>
 </body>

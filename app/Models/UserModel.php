@@ -10,8 +10,7 @@ class UserModel
 
     public function SignUp($insert)
     {
-        $this->database->query('INSERT INTO user 
-        (email, password, First_name, Last_name, username) VALUES (:email, :password, :First_name, :Last_name, :username)');
+        $this->database->query('INSERT INTO user (email, password, First_name, Last_name, username) VALUES (:email, :password, :First_name, :Last_name, :username)');
         
         $this->database->bind(':email', $insert['Email']);
         $this->database->bind(':password', password_hash($insert['passW'], PASSWORD_DEFAULT));
@@ -64,11 +63,18 @@ class UserModel
         }
     }
 
-    public function homePage()
+    public function getRecites()
     {
-
+        $this->database->query('SELECT *FROM recite');
+        return $this->database->resultSet();
     }
 
+    public function addRecites()
+    {
+        // $this->database->query('INSERT INTO `recite`
+        // (`preparation_time`, `title`, `description`, `imge_url`, `numbr_jaime`, `numbr_commentair`, `userId`, `numbr_step`) VALUES 
+        // (:prepTime, :title, :descp, :img, :jaime, :comment, :, :numStep)');
+    }
 }
 
 
