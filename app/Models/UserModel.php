@@ -65,16 +65,10 @@ class UserModel
 
     public function getRecites()
     {
-        $this->database->query('SELECT *FROM recite');
+        $this->database->query('SELECT * FROM recite');
         return $this->database->resultSet();
     }
 
-    public function addRecites()
-    {
-        // $this->database->query('INSERT INTO `recite`
-        // (`preparation_time`, `title`, `description`, `imge_url`, `numbr_jaime`, `numbr_commentair`, `userId`, `numbr_step`) VALUES 
-        // (:prepTime, :title, :descp, :img, :jaime, :comment, :, :numStep)');
-    }
 }
 
 

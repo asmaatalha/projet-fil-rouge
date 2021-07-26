@@ -1,41 +1,44 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
-<div class="">
+<div class="formSignup ml-auto my-5">
 
     <H1>SignUp</H1>
 
     <form action="<?php echo URLROOT; ?>/UsersView/signUp" method="post">
-        <div class="form-group">
-            <label for="">First Name :</label>
-            <input type="text" name="fname" placeholder="First name" class="form-control">
+
+        <div class="form-row">
+            <div class="form-group col">
+                <!-- <label for="fname">First Name :</label> -->
+                <input type="text" class="form-control" name="fname" placeholder="First name">
+            </div>
+
+            <div class="form-group col">
+                <!-- <label for="lname">Last Name :</label> -->
+                <input type="text" class="form-control" name="lname" placeholder="Last name">
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="">Last Name :</label>
-            <input type="text" name="lname" placeholder="Last name" class="form-control">
+            <!-- <label for="username">UserName :</label> -->
+            <input type="text" class="form-control" name="uname" placeholder="UserName">
+        </div>
+        
+        <div class="form-group">
+            <!-- <label for="email">Email :</label> -->
+            <input type="email" class="form-control" name="email" placeholder="Email">
         </div>
 
         <div class="form-group">
-            <label for="">UserName :</label>
-            <input type="text" name="uname" placeholder="UserName" class="form-control">
+            <!-- <label for="password">Password :</label> -->
+            <input type="password" class="form-control" name="password" placeholder="Password">
         </div>
 
-        <div class="form-group">
-            <label for="">Email :</label>
-            <input type="email" name="email" placeholder="Email" class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label for="">Password :</label>
-            <input type="password" name="password" placeholder="Password" class="form-control">
-        </div>
-
-        <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+        <input type="submit" class="form-control w-100" name="submit" value="Submit">
 
         <a href="<?php echo URLROOT;?>/UserController/Login">LogIn</a>
         
     </form>
 
-</div>    
+</div>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

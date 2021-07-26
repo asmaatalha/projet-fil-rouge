@@ -63,7 +63,7 @@ class UserController extends Controller
 
         if (isset($_SESSION['email'])) {
 
-            header('location:' . URLROOT . '/UserController/homePage');
+            header('location:' . URLROOT . '/ProfilController/pageProfil');
         }
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -87,6 +87,10 @@ class UserController extends Controller
                 
                 $this->userSession->setSession('email', $data['Email']);
 
+                ////////
+                header('location:' . URLROOT . '/ProfilController/pageProfil');
+                ///////
+
             }else {
                 echo "please enter a valid email";
             }
@@ -96,9 +100,21 @@ class UserController extends Controller
             $this->view('UsersView/Login');
         }
     }
+    
+    public function logout()
+    {
+        $this->userSession->startSession();
+        unset($_SESSION['email']);
+        header('location:' . URLROOT . '/UserController/Login');
+        
+    }
 
     public function homePage()
     {
+        // if (!isset($_SESSION['email'])) {
+        //     header('location:' . URLROOT . '/UserController/Login');
+        // }
+        
         $this->userSession->startSession();
 
         $recite = $this->userM->getRecites();
