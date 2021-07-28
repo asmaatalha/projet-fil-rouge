@@ -34,17 +34,13 @@ class UserModel
         $this->database->bind(':password', $password);
         // $this->database->bind(':pass', $pass);
         $row = $this->database->single();
-if($row = $this->database->single()){
 
-    
-        return $row;
-
-} else {
-    return false; 
-}
-        
-
-      
+        if($row = $this->database->single()){
+            return $row;
+        } 
+        else {
+            return false; 
+        }
 
     }
 

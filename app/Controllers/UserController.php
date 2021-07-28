@@ -93,7 +93,8 @@ class UserController extends Controller
                 header('location:' . URLROOT . '/ProfilController/pageProfil');
                 ///////
 
-            }else {
+            }
+            else {
                 echo "please enter a valid email";
             }
 
@@ -105,7 +106,8 @@ class UserController extends Controller
     
     public function logout()
     {
-session_start();
+        // session_start();
+        $this->userSession->startSession();
         session_destroy();
         header('location:' . URLROOT . '/UserController/Login');
         

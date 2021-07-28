@@ -15,7 +15,7 @@
                 
                 <h4><?php echo $row->title; ?></h4>
 
-                <img src="<?= URLROOT.$row->imge_url; ?>" alt="recite_image" class="img">
+                <img src="<?= URLROOT."/img/".$row->imge_url; ?>" alt="recite_image" class="img">
 
                 <p><?php echo $row->description; ?></p>
 

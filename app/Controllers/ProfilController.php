@@ -4,7 +4,7 @@ class ProfilController extends Controller
 {
     public function __construct()
     {
-        $this->userM = $this->model('ProfilModel');
+        $this->profilM = $this->model('ProfilModel');
 
         $this->userSession = new Session;
     }
@@ -13,7 +13,7 @@ class ProfilController extends Controller
     {
         $this->userSession->startSession();
 
-        $recite = $this->userM->selectR($_SESSION['user_id']);
+        $recite = $this->profilM->selectR($_SESSION['user_id']);
 
         $data = [
             "recites" => $recite
@@ -24,15 +24,18 @@ class ProfilController extends Controller
 
     public function insert()
     {
-        if (isset($_POST['submit'])) {
+        $this->userSession->startSession();
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
                 'pTime' => $_POST['time'],
                 'Title' => $_POST['Title'],
                 'Descp' => $_POST['Descp'],
-                'Img' => $_POST['Img'],
+                'Img' => $this->profilM->uploadPhoto($_FILES["Img"]["tmp_name"]),
                 'nStep' => $_POST['nStep']
             ];
-            $this->userM->addRecites($data);
+            
+            $this->profilM->addRecites($data);
             header('location:' . URLROOT . '/ProfilController/pageProfil');
         }
         else {

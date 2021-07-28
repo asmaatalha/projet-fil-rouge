@@ -3,7 +3,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->userM = $this->model('UserModel');        
+        $this->adminM = $this->model('UserModel');        
     }
 }
 
