@@ -7,7 +7,8 @@
 <div class="card-columns">
 
     <?php $count = 0; ?>
-    <?php foreach ($data["recites"] as $row ) :?>
+    
+    <?php foreach ($data['recites'] as $row ) :?>
         
         <div class="card" id="<?php echo $row -> id;?>">
             <div class="card-body">

@@ -61,10 +61,10 @@ class UserController extends Controller
 
         $this->userSession->startSession();
 
-        if (isset($_SESSION['email'])) {
+        // if (isset($_SESSION['email'])) {
 
-            header('location:' . URLROOT . '/ProfilController/pageProfil');
-        }
+        //     header('location:' . URLROOT . '/ProfilController/pageProfil');
+        // }
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -83,9 +83,11 @@ class UserController extends Controller
                 echo "please enter your password";
             }
             //check for email et password
-            if ($this->userM->findUser($data['Email'])) {
-                
-                $this->userSession->setSession('email', $data['Email']);
+            if ($test =$this->userM->login($data['Email'],$data['passW'])) {
+
+
+                $this->userSession->setSession('user_id',$test->userId);
+                $this->userSession->setSession('username',$test->username);
 
                 ////////
                 header('location:' . URLROOT . '/ProfilController/pageProfil');
@@ -103,8 +105,8 @@ class UserController extends Controller
     
     public function logout()
     {
-        $this->userSession->startSession();
-        unset($_SESSION['email']);
+session_start();
+        session_destroy();
         header('location:' . URLROOT . '/UserController/Login');
         
     }

@@ -6,7 +6,7 @@
 
         <h1>LogIn</h1>
 
-        <form action="<?php echo URLROOT; ?>/UsersView/Login" method="post">
+        <form action="<?php echo URLROOT; ?>/UserController/Login" method="post">
 
             <div class="form-group">
                 <!-- <label for="email">Email :</label> -->

@@ -11,7 +11,9 @@ class ProfilController extends Controller
 
     public function pageProfil()
     {
-        $recite = $this->userM->selectR();
+        $this->userSession->startSession();
+
+        $recite = $this->userM->selectR($_SESSION['user_id']);
 
         $data = [
             "recites" => $recite
@@ -31,7 +33,7 @@ class ProfilController extends Controller
                 'nStep' => $_POST['nStep']
             ];
             $this->userM->addRecites($data);
-            header('location:' . URLROOT . '/UserController/HomePage');
+            header('location:' . URLROOT . '/ProfilController/pageProfil');
         }
         else {
             $this->view('UsersView/insert');
