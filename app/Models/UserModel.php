@@ -59,11 +59,18 @@ class UserModel
         }
     }
 
-    public function getRecites()
-    {
-        $this->database->query('SELECT * FROM recite');
-        return $this->database->resultSet();
-    }
+    // public function getRecites()
+    // {
+    //     $this->database->query('SELECT * FROM recite');
+    //     return $this->database->resultSet();
+    // }
+
+    // public function searchTitle()
+    // {
+    //     $this->database->query("SELECT * FROM recite WHERE title LIKE '%:key'");
+        
+    //     $this->database->resultSet();
+    // }
 
 }
 

@@ -6,7 +6,7 @@ class UserController extends Controller
     {
         $this->userM = $this->model('UserModel');
         
-        $this->userSession = new Session;
+        $this->Session = new Session;
     }
 
     public function SignUp()
@@ -59,7 +59,7 @@ class UserController extends Controller
     public function Login()
     {
 
-        $this->userSession->startSession();
+        $this->Session->startSession();
 
         // if (isset($_SESSION['email'])) {
 
@@ -86,8 +86,8 @@ class UserController extends Controller
             if ($test =$this->userM->login($data['Email'],$data['passW'])) {
 
 
-                $this->userSession->setSession('user_id',$test->userId);
-                $this->userSession->setSession('username',$test->username);
+                $this->Session->setSession('user_id',$test->userId);
+                $this->Session->setSession('username',$test->username);
 
                 ////////
                 header('location:' . URLROOT . '/ProfilController/pageProfil');
@@ -107,28 +107,42 @@ class UserController extends Controller
     public function logout()
     {
         // session_start();
-        $this->userSession->startSession();
+        $this->Session->startSession();
         session_destroy();
         header('location:' . URLROOT . '/UserController/Login');
         
     }
 
-    public function homePage()
-    {
-        // if (!isset($_SESSION['email'])) {
-        //     header('location:' . URLROOT . '/UserController/Login');
-        // }
+    // public function homePage()
+    // {
+    //     // if (!isset($_SESSION['email'])) {
+    //     //     header('location:' . URLROOT . '/UserController/Login');
+    //     // }
         
-        $this->userSession->startSession();
+    //     $this->Session->startSession();
 
-        $recite = $this->userM->getRecites();
+    //     $recite = $this->userM->getRecites();
 
-        $data = [
-            "recites" => $recite
-        ];
+    //     $data = [
+    //         "recites" => $recite
+    //     ];
         
-        $this->view('UsersView/HomePage', $data); 
-    }
+    //     $this->view('UsersView/HomePage', $data); 
+    // }
+
+    // public function search()
+    // {
+    //     $this->Session->startSession();
+
+    //     $this->userM->searchTitle();
+
+    //     if (isset($_POST['submit'])) {
+            
+    //     }
+    //     else {
+            
+    //     }
+    // }
 
 }
 

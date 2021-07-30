@@ -6,12 +6,12 @@ class ProfilController extends Controller
     {
         $this->profilM = $this->model('ProfilModel');
 
-        $this->userSession = new Session;
+        $this->Session = new Session;
     }
 
     public function pageProfil()
     {
-        $this->userSession->startSession();
+        $this->Session->startSession();
 
         $recite = $this->profilM->selectR($_SESSION['user_id']);
 
@@ -24,7 +24,7 @@ class ProfilController extends Controller
 
     public function insert()
     {
-        $this->userSession->startSession();
+        $this->Session->startSession();
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [

@@ -9,7 +9,7 @@ body{
     padding-left: 30px;
 }
 
-.titless::before{
+/* .titless::before{
     content: '';
     position: absolute;
     top: 0;
@@ -19,7 +19,7 @@ body{
     background-color: yellow;
     border-top-left-radius: 20px ;
     border-bottom-right-radius: 20px;
-}
+} */
 
 .formLogin{
     width: 400px;
@@ -92,3 +92,6 @@ h1{
     
 }
 
+td, th{
+    border: 1px solid;
+}
