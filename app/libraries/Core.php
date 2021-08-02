@@ -5,7 +5,7 @@
    * URL FORMAT - /controller/method/params
    */
   class Core {
-    protected $currentController = 'reciteController';
+    protected $currentController = 'UserController';
     protected $currentMethod = 'HomePage';
     protected $params = [];
 

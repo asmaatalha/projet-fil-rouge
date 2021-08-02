@@ -59,18 +59,25 @@ class UserModel
         }
     }
 
-    // public function getRecites()
-    // {
-    //     $this->database->query('SELECT * FROM recite');
-    //     return $this->database->resultSet();
-    // }
+    public function getRecites()
+    {
+        $this->database->query('SELECT * FROM recite');
+        return $this->database->resultSet();
+    }
 
-    // public function searchTitle()
-    // {
-    //     $this->database->query("SELECT * FROM recite WHERE title LIKE '%:key'");
+    public function searchTitle($key)
+    {
+        $this->database->query('SELECT * FROM recite WHERE title LIKE :skey"%"');
+
+        $this->database->bind(':skey', $key);
         
-    //     $this->database->resultSet();
-    // }
+         return $this->database->resultSet();
+    }
+
+    public function view()
+    {
+        
+    }
 
 }
 

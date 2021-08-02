@@ -83,11 +83,10 @@ class UserController extends Controller
                 echo "please enter your password";
             }
             //check for email et password
-            if ($test =$this->userM->login($data['Email'],$data['passW'])) {
+            if ($user =$this->userM->login($data['Email'],$data['passW'])) {
 
-
-                $this->Session->setSession('user_id',$test->userId);
-                $this->Session->setSession('username',$test->username);
+                $this->Session->setSession('user_id',$user->userId);
+                $this->Session->setSession('username',$user->username);
 
                 ////////
                 header('location:' . URLROOT . '/ProfilController/pageProfil');
@@ -113,36 +112,39 @@ class UserController extends Controller
         
     }
 
-    // public function homePage()
-    // {
-    //     // if (!isset($_SESSION['email'])) {
-    //     //     header('location:' . URLROOT . '/UserController/Login');
-    //     // }
-        
-    //     $this->Session->startSession();
+    public function homePage()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_POST['search'])) {
 
-    //     $recite = $this->userM->getRecites();
+                $searchTi = $_POST['searchkey'];
+                
+                $search = $this->userM->searchTitle($searchTi);
+                $data = [
+                    'recites' => $search,
+                ];
+                $this->view('UsersView/HomePage', $data); 
+            }
+        }
+        else {
+            $recite = $this->userM->getRecites();
 
-    //     $data = [
-    //         "recites" => $recite
-    //     ];
-        
-    //     $this->view('UsersView/HomePage', $data); 
-    // }
-
-    // public function search()
-    // {
-    //     $this->Session->startSession();
-
-    //     $this->userM->searchTitle();
-
-    //     if (isset($_POST['submit'])) {
+            $data = [
+                "recites" => $recite
+            ];
             
-    //     }
-    //     else {
-            
-    //     }
-    // }
+            $this->view('UsersView/HomePage', $data); 
+        }
+    }
+
+    public function views()
+    {
+        $this->userM->view();
+    }
+    
+
+
+
 
 }
 

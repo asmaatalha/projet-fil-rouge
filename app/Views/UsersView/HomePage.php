@@ -3,11 +3,11 @@
 <div>
     <h1 class="titless">Recites</h1>
 
-    <form action="" methode="post">
+    <form action="" method="post">
 
         <label for="search">Search: </label>
-        <input type="text" id="search" name="search">
-        <input type="submit" value="submit" name="submit">
+        <input type="text" id="search" name="searchkey">
+        <input type="submit" value="submit" name="search">
     </form>
 
 </div>
@@ -16,14 +16,14 @@
 
     <?php $count = 0; ?>
     
-    <?php foreach ($data['recites'] as $row ) :?>
+    <?php foreach ($data['recites'] as $row ) : ?>
         
         <div class="card" id="<?php echo $row -> id;?>">
             <div class="card-body">
                 
                 <h4><?php echo $row->title; ?></h4>
 
-                <a href="">
+                <a href="<?php echo URLROOT;?>/UsersView/views">
                     <img src="<?= URLROOT."/img/".$row->imge_url; ?>" alt="recite_image" class="img">
                 </a>
 
