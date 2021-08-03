@@ -1,25 +1,33 @@
-<?php echo "hello"; ?>
+<?php require APPROOT . '/views/inc/header.php'; ?>
 <div>
-    <?php $count = 0;?>
-    <?php foreach ($data['recites'] as $row ) :?>
-    <div class="card" id="<?php echo $row->reciteId;?>">
-        <div class="card-body">
+    
+    <div class="">
                 
-            <h4><?php echo $row->title; ?></h4>
+        <h1><?php echo $data->title; ?></h1>
 
-            <a href="<?php echo URLROOT;?>/ReciteController/details/<?= $row->reciteId ?>">
-                <img src="<?= URLROOT."/img/".$row->imge_url; ?>" alt="recite_image" class="img">
-            </a>
-
-            <p><?php echo $row->description; ?></p>
-
-            <p><?php echo $row->numbr_step; ?></p>
-
-            <div>
-                <span><?php $time = strtotime($row->dateR); $day = date('D,d M Y', $time); echo $day; ?></span>
-            </div>
+        <div>
+            <img src="<?= URLROOT."/img/".$data->imge_url; ?>" alt="recite_image" class="img">
+            <span><?php $time = strtotime($data->dateR); $day = date('D,d M Y', $time); echo $day; ?></span>
         </div>
+        
+        <div>
+            <h2>Description</h2>
+            <p><?php echo $data->description; ?></p>
+        </div>
+            
+        <div>
+            <h2>préparation time:</h2>
+            <p><?php echo $data->preparation_time; ?></p>
+        </div>
+            
+        <div>
+            <h2>Steps:</h2>
+            <p><?php echo $data->numbr_step; ?></p>
+        </div>
+        
     </div>
-    <?php $count ++ ; ?>
-    <?php endforeach ; ?>
+   
 </div>
+
+
+<?php require APPROOT . '/views/inc/footer.php'; ?>
