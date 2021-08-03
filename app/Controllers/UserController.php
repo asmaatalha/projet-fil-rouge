@@ -137,15 +137,6 @@ class UserController extends Controller
         }
     }
 
-    public function views()
-    {
-        $this->userM->view();
-    }
-    
-
-
-
-
 }
 
 ?>

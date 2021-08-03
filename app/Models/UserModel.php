@@ -71,12 +71,7 @@ class UserModel
 
         $this->database->bind(':skey', $key);
         
-         return $this->database->resultSet();
-    }
-
-    public function view()
-    {
-        
+        return $this->database->resultSet();
     }
 
 }

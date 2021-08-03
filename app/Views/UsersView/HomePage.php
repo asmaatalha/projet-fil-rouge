@@ -18,12 +18,12 @@
     
     <?php foreach ($data['recites'] as $row ) : ?>
         
-        <div class="card" id="<?php echo $row -> id;?>">
+        <div class="card" id="<?php echo $row->reciteId;?>">
             <div class="card-body">
                 
                 <h4><?php echo $row->title; ?></h4>
 
-                <a href="<?php echo URLROOT;?>/UsersView/views">
+                <a href="<?php echo URLROOT;?>/ReciteController/details/<?= $row->reciteId ?>">
                     <img src="<?= URLROOT."/img/".$row->imge_url; ?>" alt="recite_image" class="img">
                 </a>
 
