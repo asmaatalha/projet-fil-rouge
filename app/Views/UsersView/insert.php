@@ -1,7 +1,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div>
-    <form class="insertR-form" action="<?php echo URLROOT; ?>/UsersView/insert" method="post" enctype="multipart/form-data">
+    <form class="insertR-form" action="" method="post" enctype="multipart/form-data">
         <label for="title">Title: </label>
         <input type="text" name="Title" placeholder="title">
 

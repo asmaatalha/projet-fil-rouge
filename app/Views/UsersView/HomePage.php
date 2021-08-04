@@ -1,47 +1,38 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 <?php require APPROOT . '/views/inc/navbar.php'; ?>
-<div>
-    <h1 class="titless">Recites</h1>
 
-    <form action="" method="post">
+<div class="home pading-p">
+    <div class="d-flex  justify-content-center">
+        <!-- <h1 class="titless">Recites</h1> -->
+        <form action="" method="post">
+            <input type="text" id="search" name="searchkey" placeholder="Search Recite">
+            <input type="submit" value="search" name="search">
+        </form>
 
-        <label for="search">Search: </label>
-        <input type="text" id="search" name="searchkey">
-        <input type="submit" value="submit" name="search">
-    </form>
+    </div>
 
-</div>
+    <div class="card-columns">
 
-<div class="card-columns">
+        <?php $count = 0; ?>
+        <?php foreach ($data['recites'] as $row ) : ?>
+            
+            <div class="card" id="<?php echo $row->reciteId;?>">
+                <div class="card-body">
+                    <h4><?php echo $row->title; ?></h4>
 
-    <?php $count = 0; ?>
-    
-    <?php foreach ($data['recites'] as $row ) : ?>
-        
-        <div class="card" id="<?php echo $row->reciteId;?>">
-            <div class="card-body">
-                
-                <h4><?php echo $row->title; ?></h4>
-
-                <a href="<?php echo URLROOT;?>/ReciteController/details/<?= $row->reciteId ?>">
-                    <img src="<?= URLROOT."/img/".$row->imge_url; ?>" alt="recite_image" class="img">
-                </a>
-
-                <!-- <p><?php echo $row->description; ?></p> -->
-
-                <!-- <p><?php echo $row->numbr_step; ?></p> -->
-
-                <div>
-                    <!-- <span><?php $time = strtotime($row->dateR); $day = date('D,d M Y', $time); echo $day; ?></span> -->
+                    <a href="<?php echo URLROOT;?>/ReciteController/details/<?= $row->reciteId ?>">
+                        <img src="<?= URLROOT."/img/".$row->imge_url; ?>" alt="recite_image" class="img-home">
+                    </a>
                 </div>
             </div>
-        </div>
 
-    <?php $count ++ ; ?>
-    <?php endforeach ; ?>
 
+        <?php $count ++ ; ?>
+        <?php endforeach ; ?>
+
+    </div>
+    
 </div>
-
 
 
 

@@ -1,98 +1,36 @@
+/* géneral */
 body{
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    background-color: #fef6e4;
-}
-.titless{
-    position: relative;
-    padding-left: 30px;
+    background-color: #FEF6E4;
 }
 
-/* .titless::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 50px;
-    background-color: yellow;
-    border-top-left-radius: 20px ;
-    border-bottom-right-radius: 20px;
-} */
-
-.formLogin{
-    width: 400px;
-    height: fit-content;
-    background: rgb(201, 60, 60);
-    color: rgb(241, 212, 212);
-    /* top: 10%;
-    left: 35%; */
-    box-sizing: border-box;
-    padding: 90px;
-    border-radius: 20px;
+.pading-p{
+    padding: 30px;
 }
 
-.formSignup{
-    width: 450px;
-    height: fit-content;
-    background: rgb(201, 60, 60);
-    color: rgb(241, 212, 212);
-    box-sizing: border-box;
-    padding: 50px;
-    border-radius: 20px;
-    top: 10% !important;
+.home{
+    display: grid;
+    grid-row-gap: 30px;
+    grid-template-rows: auto auto auto;
+ 
 }
 
-/* .login{
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: -1px;
-    left: calc(50% - 50px);
-} */
-
-/* h1{
-    text-align: center;
-    font-size: 20px;
-} */
-
-.signup_inp > input[type="email"],.signup_inp > input[type="password"],.signup_inp > input[type="text"]{
-    border: none !important;
-    border-bottom: 1px solid #fff !important;
-    background: transparent !important;
-    outline: none !important;
-    height: 40px !important;
+/* card  */
+.img-home{
+    width: 90px;
+    height: 90px;
 }
 
-.signup_inp > input[type="submit"]{
-    border: none;
-    outline: none;
-    height: 40px;
-    width: 85%;
-    background: #fff;
-    color: black;
-    font-size: 20px;
-    border-radius: 20px;
-    margin-top: 20px;
-}
-
-.navb > a{
-    text-decoration: none;
-    font-size: 15px;
-    color: darkgray;
-}
-
+/* navbar */
 .log{
-    background-color: darkorange;
+    background-color: #F3D2C1;
 }
 
+/* image recite */
 .img{
     width: 40%;
     height: 50%;
     border-radius: 23px;
-}
-
-td, th{
-    border: 1px solid;
 }

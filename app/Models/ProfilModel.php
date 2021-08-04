@@ -31,7 +31,7 @@ class ProfilModel
         $number_rows = $this->database->rowCount();
 
         if ($number_rows > 0 ) {
-            return $row;  
+            return $row;
         }
         else {
             return false; 
