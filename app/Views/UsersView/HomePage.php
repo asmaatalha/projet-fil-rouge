@@ -2,8 +2,7 @@
 <?php require APPROOT . '/views/inc/navbar.php'; ?>
 
 <div class="home pading-p">
-    <div class="d-flex  justify-content-center">
-        <!-- <h1 class="titless">Recites</h1> -->
+    <div class="d-flex justify-content-center">
         <form action="" method="post">
             <input type="text" id="search" name="searchkey" placeholder="Search Recite">
             <input type="submit" value="search" name="search">
@@ -17,7 +16,7 @@
         <?php foreach ($data['recites'] as $row ) : ?>
             
             <div class="card" id="<?php echo $row->reciteId;?>">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column align-items-center">
                     <h4><?php echo $row->title; ?></h4>
 
                     <a href="<?php echo URLROOT;?>/ReciteController/details/<?= $row->reciteId ?>">

@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark  navba-header log">
+<nav class="navbar navbar-expand-lg navbar-dark  navba-header bg-prime vw-100">
   <h5 class="navbar-brand nav-link"><?php echo SITENAME; ?></h5>
       
   <!-- home and login list -->

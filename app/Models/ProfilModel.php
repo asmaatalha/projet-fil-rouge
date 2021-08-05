@@ -56,6 +56,14 @@ class ProfilModel
         $this->database->execute();
     }
 
+    public function addSteps($step)
+    {
+        $this->database->query('INSERT INTO `steps`(`descS`) VALUES (:descS)');
+
+        $this->database->bind(':descS', $step['step']);
+        $this->database->execute();
+    }
+
 }
 
 

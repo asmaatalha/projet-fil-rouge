@@ -36,10 +36,21 @@ class ProfilController extends Controller
             ];
             
             $this->profilM->addRecites($data);
-            header('location:' . URLROOT . '/ProfilController/pageProfil');
+            header('location:' . URLROOT . '/ProfilController/steps');
         }
         else {
             $this->view('UsersView/insert');
+        }
+    }
+
+    public function steps()
+    {
+        $this->Session->startSession();
+
+        if (isset($_POST['submit'])) {
+            $data = [
+                'step' => $_POST
+            ]
         }
     }
 }

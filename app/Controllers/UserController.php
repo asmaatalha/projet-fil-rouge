@@ -33,7 +33,6 @@ class UserController extends Controller
                     echo "email already taken";
                 }
             }
-
             //validation password
             if (empty($data['passW'])) {
                 echo "please enter your password";
