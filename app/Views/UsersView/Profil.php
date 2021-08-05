@@ -2,14 +2,19 @@
 <?php require APPROOT . '/views/inc/navbarP.php'; ?>
 
 <div class="">
-    <div>
-        <a class="nav-link" href="<?php echo URLROOT;?>/UserController/HomePage"><?php echo $_SESSION['username']; ?></a>
+    <div class="">
+        <div class="">
+            <img src="../icon/waving-hand.png" alt="hi" width="40">
+
+            <p>Hello <?php echo $_SESSION['username']; ?></p>
+        </div>
+        <div class="btn btn-secondary add">
+            <a href="<?php echo URLROOT;?>/ProfilController/insert">
+                <img src="<?= URLROOT ?>/public/img/plus.png" alt="plus" width="30px">Add recite
+            </a>
+        </div>
     </div>
-    <div class="btn btn-secondary add">
-        <a href="<?php echo URLROOT;?>/ProfilController/insert">
-            <img src="<?= URLROOT ?>/public/img/plus.png" alt="plus" width="30px">Add recite
-        </a>
-    </div>
+    
     
     <div class="card-columns">
 
