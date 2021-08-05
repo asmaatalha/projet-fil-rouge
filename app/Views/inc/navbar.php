@@ -1,6 +1,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark  navba-header bg-prime vw-100">
-  <h5 class="navbar-brand nav-link"><?php echo SITENAME; ?></h5>
+  <a href="">
+    <h5 class="navbar-brand nav-link"><?php echo SITENAME; ?></h5>
+  </a>
       
   <!-- home and login list -->
   <li class="navbar-nav ml-auto">

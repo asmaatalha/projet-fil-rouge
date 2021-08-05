@@ -24,6 +24,10 @@
             <h2>Steps:</h2>
             <p><?php echo $data->numbr_step; ?></p>
         </div>
+
+        <div>
+            <p><?php echo $data->descS; ?></p>
+        </div>
         
     </div>
    

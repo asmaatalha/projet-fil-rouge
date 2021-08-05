@@ -52,6 +52,12 @@ class ProfilModel
         }
     }
 
+    // public function selectS()
+    // {
+    //     $this->database->query('SELECT * FROM steps');
+    //     return $this->database->single();
+    // }
+
     public function addRecites($insertR)
     {
         $this->database->query('INSERT INTO `recite`

@@ -22,6 +22,17 @@ class ProfilController extends Controller
         $this->view('UsersView/Profil', $data); 
     }
 
+    public function detailS(){
+        $this->Session->startSession();
+        $step = $this->profilM->selectS($_SESSION['user_id']);
+
+        $data = [
+            "steps" => $step
+        ];
+        
+        $this->view('UsersView/details', $data); 
+    }
+
     public function insert()
     {
         $this->Session->startSession();
