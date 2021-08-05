@@ -36,9 +36,20 @@ class ProfilModel
         else {
             return false; 
         }
+    }
 
-        // $this->database->query('SELECT * FROM recite');
-        // return $this->database->resultSet();
+    public function selectS($id)
+    {
+        $this->database->query('SELECT * FROM steps S, recite R WHERE S.reciteId = R.reciteId AND S.reciteId = :id');
+        $this->database->bind(':id', $id);
+        $row = $this->database->resultSet();
+        $num_rows = $this->database->rowCount();
+        if ($num_rows > 0 ) {
+            return $row;
+        }
+        else {
+            return false; 
+        }
     }
 
     public function addRecites($insertR)
