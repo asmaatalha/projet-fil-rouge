@@ -49,8 +49,14 @@ class ProfilController extends Controller
 
         if (isset($_POST['submit'])) {
             $data = [
-                'step' => $_POST
-            ]
+                'step' => $_POST['descS']
+            ];
+
+            $this->profilM->addSteps($data);
+            header('location:' . URLROOT . '/ProfilController/pageProfil');
+        }
+        else {
+            $this->view('UsersView/step');
         }
     }
 }
