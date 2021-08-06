@@ -60,11 +60,6 @@ class UserController extends Controller
 
         $this->Session->startSession();
 
-        // if (isset($_SESSION['email'])) {
-
-        //     header('location:' . URLROOT . '/ProfilController/pageProfil');
-        // }
-
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);

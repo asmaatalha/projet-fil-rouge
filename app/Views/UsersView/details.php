@@ -6,7 +6,7 @@
         <h1><?php echo $data->title; ?></h1>
 
         <div>
-            <img src="<?= URLROOT."/img/".$data->imge_url; ?>" alt="recite_image" class="img">
+            <img src="<?= URLROOT."/img/".$data->imge_url; ?>" alt="recite_image" class="imge">
             <span><?php $time = strtotime($data->dateR); $day = date('D,d M Y', $time); echo $day; ?></span>
         </div>
         

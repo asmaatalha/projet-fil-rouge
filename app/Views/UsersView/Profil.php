@@ -15,7 +15,6 @@
         </div>
     </div>
     
-    
     <div class="card-columns">
 
         <?php $count = 0; ?>
@@ -30,6 +29,13 @@
                         <img src="<?= URLROOT."/img/".$row->imge_url; ?>" alt="recite_image" class="img">
                     </a>
 
+                    <a href="">
+                        <img src="../icon/delete.png" alt="delet" width="25">
+                    </a>
+                    <a href="">
+                        <img src="../icon/updated.png" alt="update" width="25">
+                    </a>
+
                 </div>
             </div>
             
@@ -40,3 +46,5 @@
     </div>
     
 </div>
+
+<?php require APPROOT . '/views/inc/footer.php'; ?>

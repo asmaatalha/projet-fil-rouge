@@ -30,7 +30,10 @@ body{
 
 /* image recite */
 .img{
-    width: 40%;
-    height: 50%;
+    width: 95%;
+    border-radius: 23px;
+}
+.imge{
+    width: 50%;
     border-radius: 23px;
 }

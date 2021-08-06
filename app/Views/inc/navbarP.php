@@ -7,10 +7,10 @@
   <li class="navbar-nav navb ml-auto">
     <!-- <a class="nav-link" href="<?php echo URLROOT;?>/UserController/HomePagey">Home</a> -->
     <a href="" class="pt-1">
-      <img src="../icon/user.png" alt="user" width="20">Profil
+      <img src="../icon/profil.png" alt="user" width="20">Profil
     </a>
     <a class="nav-link pt-1" href="<?php echo URLROOT;?>/UserController/logout">Logout</a>
-    <a class="nav-link" href="<?php echo URLROOT;?>/UserController/HomePage"><?php echo $_SESSION['username']; ?></a>
+    <!-- <a class="nav-link" href="<?php echo URLROOT;?>/UserController/HomePage"><?php echo $_SESSION['username']; ?></a> -->
 
   </li>
   
