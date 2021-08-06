@@ -90,6 +90,20 @@ class ProfilModel
         return $result;
     }
 
+    public function updateRecite($upd)
+    {
+        $this->database->query('UPDATE `recite` SET 
+        preparation_time = :prepT, title = :Title, description = :descp, imge_url = :img, numbr_step = :numStp WHERE reciteId = :id');
+
+        $this->database->bind(':prepT', $upd['pTime']);
+        $this->database->bind(':Title', $upd['upTitle']);
+        $this->database->bind(':descp',$upd['Descp']);
+        $this->database->bind(':img', $upd['Img']);
+        $this->database->bind(':numStp', $upd['nStep']);
+
+        $this->database->execute();
+    }
+
 }
 
 

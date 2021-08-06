@@ -32,7 +32,7 @@
                     <a href="<?php echo URLROOT;?>/ProfilController/delete/<?php echo $row->reciteId; ?>">
                         <img src="../icon/delete.png" alt="delet" width="25">
                     </a>
-                    <a href="<?php echo URLROOT;?>/ProfilController/update/<?php echo $row->reciteId; ?>">
+                    <a href="<?php echo URLROOT;?>/ProfilController//<?php echo $row->reciteId; ?>">
                         <img src="../icon/updated.png" alt="update" width="25">
                     </a>
 
