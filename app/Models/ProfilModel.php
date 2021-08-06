@@ -81,6 +81,15 @@ class ProfilModel
         $this->database->execute();
     }
 
+    public function deleteRecite($id)
+    {
+        $this->database->query('DELETE FROM recite WHERE reciteId = :id');
+        
+        $this->database->bind('id', $id);
+        $result = $this->database->single();
+        return $result;
+    }
+
 }
 
 
