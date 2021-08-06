@@ -70,6 +70,12 @@ class ProfilController extends Controller
             $this->view('UsersView/step');
         }
     }
+
+    public function delete($id)
+    {
+        $this->profilM->deleteRecite($id);
+        header('location:' . URLROOT . '/ProfilController/pageProfil');
+    }
 }
 
 ?>
