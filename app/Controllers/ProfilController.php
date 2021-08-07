@@ -76,6 +76,27 @@ class ProfilController extends Controller
         $this->profilM->deleteRecite($id);
         header('location:' . URLROOT . '/ProfilController/pageProfil');
     }
+
+    public function update($id)
+    {
+        if (isset($_POST['update'])) {
+            $data = [
+                'id' => $id,
+                'pTime' => $_POST['prepTime'],
+                'upTitle' => $_POST['title'],
+                'Descp' => $_POST['descp'],
+                'Img' => $_POST['img'],
+                'nStep' => $_POST['nStep']
+            ];
+            $this->profilM->updateRecite($data);
+            header('location:' . URLROOT . '/ProfilController/pageProfil');
+        }
+        else {
+            $var = $this->profilM->getReciteById($id);
+            $this->view('UsersView/update', $var);
+        }
+
+    }
 }
 
 ?>

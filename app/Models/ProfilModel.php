@@ -100,6 +100,7 @@ class ProfilModel
         $this->database->bind(':descp',$upd['Descp']);
         $this->database->bind(':img', $upd['Img']);
         $this->database->bind(':numStp', $upd['nStep']);
+        $this->database->bind(':id', $upd['id']);
 
         $this->database->execute();
     }
