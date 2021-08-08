@@ -71,6 +71,12 @@ class ProfilController extends Controller
         }
     }
 
+    public function detailsR($id)
+   {
+        $details = $this->reciteM->getReciteById($id);
+        $this->view('UsersView/details', $details);
+   }
+
     public function delete($id)
     {
         $this->profilM->deleteRecite($id);
