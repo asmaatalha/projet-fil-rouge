@@ -71,7 +71,7 @@ class ProfilController extends Controller
         }
     }
 
-    public function detailsR($id)
+    public function detail($id)
    {
         $details = $this->reciteM->getReciteById($id);
         $this->view('UsersView/details', $details);
