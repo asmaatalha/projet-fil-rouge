@@ -19,7 +19,7 @@ class ProfilController extends Controller
             "recites" => $recite
         ];
         
-        $this->view('UsersView/Profil', $data); 
+        $this->view('UsersView/PageUser', $data); 
     }
 
     public function detailS(){
@@ -88,10 +88,10 @@ class ProfilController extends Controller
         if (isset($_POST['update'])) {
             $data = [
                 'id' => $id,
-                'pTime' => $_POST['prepTime'],
-                'upTitle' => $_POST['title'],
-                'Descp' => $_POST['descp'],
-                'Img' => $_POST['img'],
+                'pTime' => $_POST['time'],
+                'upTitle' => $_POST['Title'],
+                'Descp' => $_POST['Descp'],
+                'Img' => $_POST['Img'],
                 'nStep' => $_POST['nStep']
             ];
             $this->profilM->updateRecite($data);

@@ -10,7 +10,7 @@
         <textarea type="text" name="Descp"><?= $data->description; ?></textarea>
 
         <label for="img">Img: </label>
-        <input type="file" name="Img" <?= $data->imge_url; ?>>
+        <input type="file" name="Img" <?= URLROOT."/img/".$data->imge_url; ?>>
 
         <label for="appt">Select a time:</label>
         <input type="time" id="appt" name="time" <?= $data->preparation_time; ?>>
@@ -18,7 +18,7 @@
         <label for="nomp">Nompre de stape: </label>
         <input type="number" name="nStep" placeholder="numpTime"<?= $data->numbr_step; ?>>
 
-        <input type="submit" name="submit" value="Submit">
+        <input type="submit" name="update" value="Submit">
 
     </form>
 
