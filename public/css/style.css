@@ -37,3 +37,8 @@ body{
     width: 50%;
     border-radius: 23px;
 }
+
+.user{
+    display: flex;
+    justify-content:space-between;
+}

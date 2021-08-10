@@ -2,7 +2,7 @@
 <?php require APPROOT . '/views/inc/navbarP.php'; ?>
 
 <div class="">
-    <div class="">
+    <div class="user">
         <div class="">
             <img src="../icon/waving-hand.png" alt="hi" width="40">
 

@@ -1,7 +1,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 <?php require APPROOT . '/views/inc/navbarP.php'; ?>
 
-<?= "hello"; ?>
+<?php echo "hello"; ?>
 
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

@@ -116,7 +116,7 @@ class ProfilModel
         $this->database->execute();
     }
 
-    public function updateProfil()
+    public function updateProfil($profil)
     {
         $this->database->query('UPDATE `user` SET 
         email=:email, password=:pass, First_name=:fname, Last_name=:lname, username=:name WHERE userId=:id');

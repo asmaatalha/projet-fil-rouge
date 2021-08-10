@@ -104,9 +104,26 @@ class ProfilController extends Controller
 
     }
 
-    public function profil()
+    public function updateP($id)
     {
-        echo "Hii";
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_POST['modifier'])) {
+                $data = [
+                    'userId' => $id,
+                    'Email' => $_POST['email'],
+                    'Pass' => $_POST['password'],
+                    'Fname' => $_POST['fname'],
+                    'Lname' => $_POST['lname'],
+                    'Name' => $_POST['name'],
+                ];
+                $this->profilM->updateProfil($data);
+                header('location:' . URLROOT . '/ProfilController/pageProfil');
+            }
+            else {
+                $upd = $this->profilM->getReciteById($id);
+                $this->view('UsersView/Profil', $upd);
+            }
+        }
     }
 }
 
