@@ -103,6 +103,11 @@ class ProfilController extends Controller
         }
 
     }
+
+    public function profil()
+    {
+        echo "Hii";
+    }
 }
 
 ?>

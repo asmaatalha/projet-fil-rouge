@@ -116,6 +116,11 @@ class ProfilModel
         $this->database->execute();
     }
 
+    public function profil()
+    {
+        
+    }
+
 }
 
 
