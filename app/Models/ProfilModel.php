@@ -104,7 +104,7 @@ class ProfilModel
     public function updateRecite($upd)
     {
         $this->database->query('UPDATE `recite` SET 
-        preparation_time = :prepT, title = :Title, description = :descp, imge_url = :img, numbr_step = :numStp WHERE reciteId = :id');
+        preparation_time=:prepT, title=:Title, description=:descp, imge_url=:img, numbr_step=:numStp WHERE reciteId=:id');
 
         $this->database->bind(':prepT', $upd['pTime']);
         $this->database->bind(':Title', $upd['upTitle']);
@@ -118,7 +118,17 @@ class ProfilModel
 
     public function profil()
     {
-        
+        $this->database->query('UPDATE `user` SET 
+        email=:email, password=:pass, First_name=:fname, Last_name=:lname, username=:name WHERE userId=:id');
+
+        $this->database->bind(':email', $profil['Email']);
+        $this->database->bind(':pass', $profil['Pass']);
+        $this->database->bind(':fname', $profil['Fname']);
+        $this->database->bind(':lname', $profil['Lname']);
+        $this->database->bind(':name', $profil['Name']);
+        $this->database->bind(':id', $profil['id']);
+
+        $this->database->execute();
     }
 
 }
