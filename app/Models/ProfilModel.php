@@ -52,6 +52,14 @@ class ProfilModel
         }
     }
 
+    public function getUserById($user_id){
+        $this->database->query('SELECT * FROM user WHERE userId = :id');
+        $this->database->bind(':id', $user_id);
+        
+        return $this->database->single();
+
+    }
+
     // public function selectS()
     // {
     //     $this->database->query('SELECT * FROM steps');

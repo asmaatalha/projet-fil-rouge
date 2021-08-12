@@ -3,16 +3,24 @@
 
 <div class="">
     <div class="user">
-        <div class="">
-            <img src="../icon/waving-hand.png" alt="hi" width="40">
+        <div class="d-flex mt-2">
+            <img src="../icon/waving-hand.png" alt="hi" height="40">
 
-            <p>Hello <?php echo $_SESSION['username']; ?></p>
+            <p class=" pt-2">Hello <?php echo $_SESSION['username']; ?></p>
         </div>
-        <div class="btn btn-secondary add">
-            <a href="<?php echo URLROOT;?>/ProfilController/insert">
-                <img src="<?= URLROOT ?>/public/img/plus.png" alt="plus" width="30px">Add recite
-            </a>
+        <div class="d-flex mt-2">
+            <div class="btn btn-secondary add mx-2">
+                <a href="<?php echo URLROOT;?>/ProfilController/insert">
+                    <img src="<?= URLROOT ?>/public/img/plus.png" alt="plus" width="30px">Add recite
+                </a>
+            </div>
+            <div class="btn btn-secondary add mx-2">
+                <a href="<?php echo URLROOT;?>/ProfilController/updateP/<?= $_SESSION['user_id'] ?>">
+                    <img src="<?= URLROOT ?>/public/img/plus.png" alt="plus" width="30px">Update
+                </a>
+            </div>
         </div>
+        
     </div>
     
     <div class="card-columns">

@@ -42,3 +42,6 @@ body{
     display: flex;
     justify-content:space-between;
 }
+.add{
+    height: 45px;
+}
