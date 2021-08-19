@@ -15,12 +15,12 @@
         <?php $count = 0; ?>
         <?php foreach ($data['recites'] as $row ) : ?>
             
-            <div class="card" id="<?php echo $row->reciteId;?>">
+            <div class="card recit" id="<?php echo $row->reciteId;?>">
                 <div class="card-body d-flex flex-column align-items-center">
                     <h4><?php echo $row->title; ?></h4>
 
                     <a href="<?php echo URLROOT;?>/ReciteController/details/<?= $row->reciteId ?>">
-                        <img src="<?= URLROOT."/img/".$row->imge_url; ?>" alt="recite_image" class="img-home">
+                        <img src="<?= URLROOT."/img/".$row->imge_url; ?>" alt="recite_image" class="card-img img-home">
                     </a>
                 </div>
             </div>

@@ -17,18 +17,15 @@ body{
  
 }
 
-/* card  */
-.img-home{
-    width: 90px;
-    height: 90px;
-}
-
 /* navbar */
 .bg-prime{
     background-color: #F3D2C1;
 }
 
-/* image recite */
+/* recite */
+.recit{
+    background-color:#F5F4F4;
+}
 .img{
     width: 95%;
     border-radius: 23px;
@@ -37,7 +34,7 @@ body{
     width: 50%;
     border-radius: 23px;
 }
-
+/* name user et add */
 .user{
     display: flex;
     justify-content:space-between;
