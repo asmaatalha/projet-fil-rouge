@@ -121,6 +121,7 @@ class ProfilController extends Controller
             }
         }else {
             $upd = $this->profilM->getUserById($user_id);
+            var_dump($upd);
             $this->view('UsersView/updateP', $upd);
         }
     }

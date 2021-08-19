@@ -14,11 +14,11 @@
                     <img src="<?= URLROOT ?>/public/img/plus.png" alt="plus" width="30px">Add recite
                 </a>
             </div>
-            <div class="btn btn-secondary add mx-2">
+            <!-- <div class="btn btn-secondary add mx-2">
                 <a href="<?php echo URLROOT;?>/ProfilController/updateP/<?= $_SESSION['user_id'] ?>">
                     <img src="<?= URLROOT ?>/public/img/plus.png" alt="plus" width="30px">Update
                 </a>
-            </div>
+            </div> -->
         </div>
         
     </div>

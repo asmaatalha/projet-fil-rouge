@@ -6,7 +6,7 @@
   <!-- home and login list -->
   <li class="navbar-nav navb ml-auto">
     <!-- <a class="nav-link" href="<?php echo URLROOT;?>/UserController/HomePagey">Home</a> -->
-    <a href="<?php echo URLROOT;?>/ProfilController/pageProfil" class="pt-1">
+    <a href="<?php echo URLROOT;?>/ProfilController/updateP/<?= $_SESSION['user_id'] ?>" class="pt-1">
       <img src="../icon/profil.png" alt="user" width="20">Profil
     </a>
     <a class="nav-link pt-1" href="<?php echo URLROOT;?>/UserController/logout">Logout</a>
