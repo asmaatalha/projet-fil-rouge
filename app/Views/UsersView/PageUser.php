@@ -34,13 +34,13 @@
                     <h4><?php echo $row->title; ?></h4>
 
                     <a href="<?php echo URLROOT;?>/ReciteController/details/<?= $row->reciteId ?>">
-                        <img src="<?= URLROOT."/img/".$row->imge_url; ?>" alt="recite_image" class="img">
+                        <img src="<?= URLROOT ?>/img/<?= $row->imge_url; ?>" alt="recite_image" class="img">
                     </a>
 
                     <a href="<?php echo URLROOT;?>/ProfilController/delete/<?php echo $row->reciteId; ?>">
                         <img src="../icon/delete.png" alt="delet" width="25">
                     </a>
-                    <a href="<?php echo URLROOT;?>/ProfilController/update/<?php echo $row->reciteId; ?>">
+                    <a href="<?php echo URLROOT;?>/ProfilController/edit/<?php echo $row->reciteId; ?>">
                         <img src="../icon/updated.png" alt="update" width="25">
                     </a>
 

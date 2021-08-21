@@ -42,3 +42,70 @@ body{
 .add{
     height: 45px;
 }
+
+/* signUp */
+.signup{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-column-gap: 15%;
+}
+.signup h1{
+    text-align: center;
+}
+.button{
+    background-color: #FD5A34;
+    width: 150px;
+    border-radius: 80px;
+    line-height: 2.5;
+    color: rgb(255, 255, 255);
+}
+.an_introduction1{
+    display: grid;
+    grid-template-rows: 20% 20% 20%;
+    grid-row-gap: 8%;
+}
+.an_introduction1 h5{
+    line-height: 2;
+    font-family: Segoe UI Emoji;
+    text-align: center;
+}
+.hii{
+    text-align: center !important;
+    border:solid rgb(0, 0, 0);
+    width: 150px;
+    height: 70%;
+    border-radius: 80px;
+    line-height: 2.5;
+    background-color: #FD5A34;
+    margin-left: 30%;
+}
+
+/* login */
+.formLogin{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-column-gap: 15%;
+}
+.formLogin h1{
+    text-align: center;
+}
+.hii1{
+    text-align: center;
+    border:solid rgb(0, 0, 0);
+    width: 150px;
+    height: 140%;
+    border-radius: 80px;
+    line-height: 2.2;
+    background-color: #FD5A34;
+    margin-left: 30%;
+}
+.an_introduction2{
+    display: grid;
+    grid-template-rows: 30% 30% 15%;
+    grid-row-gap: 10%;
+}
+.an_introduction2 h5{
+    line-height: 2;
+    font-family: Segoe UI Emoji;
+    text-align: center;
+}

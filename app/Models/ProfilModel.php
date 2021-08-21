@@ -111,17 +111,33 @@ class ProfilModel
 
     public function updateRecite($upd)
     {
+        // var_dump($upd);
+        // die();
         $this->database->query('UPDATE `recite` SET 
         preparation_time=:prepT, title=:Title, description=:descp, imge_url=:img, numbr_step=:numStp WHERE reciteId=:id');
 
         $this->database->bind(':prepT', $upd['pTime']);
         $this->database->bind(':Title', $upd['upTitle']);
         $this->database->bind(':descp',$upd['Descp']);
-        $this->database->bind(':img', $upd['Img']);
+        $this->database->bind(':img', $upd['image']);
         $this->database->bind(':numStp', $upd['nStep']);
         $this->database->bind(':id', $upd['id']);
 
         $this->database->execute();
+
+
+        // var_dump($data);
+        // $this->db->query("UPDATE `pharmacy` SET `name_pharma` = :name_pharma, `localisation`= :localisation,`image`=:image , `phone`= :phone  WHERE id_pharmacy = :id_pharmacy");
+        // $this->db->bind(':name_pharma', $data['name_pharma']);
+        // $this->db->bind(':localisation', $data['localisation']);
+        // $this->db->bind(':image', $data['image']);
+        // $this->db->bind(':phone', $data['phone']);
+        // $this->db->bind(':id_pharmacy', $data['id_pharmacy']);
+        // if ($this->db->execute()) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
     }
 
     public function updateProfil($profil)

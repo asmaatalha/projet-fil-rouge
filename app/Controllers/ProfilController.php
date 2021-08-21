@@ -7,6 +7,8 @@ class ProfilController extends Controller
         $this->profilM = $this->model('ProfilModel');
 
         $this->Session = new Session;
+
+        
     }
 
     public function pageProfil()
@@ -36,18 +38,33 @@ class ProfilController extends Controller
     public function insert()
     {
         $this->Session->startSession();
+        $image = $_FILES['Img']['tmp_name'];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
                 'pTime' => $_POST['time'],
                 'Title' => $_POST['Title'],
                 'Descp' => $_POST['Descp'],
-                'Img' => $this->profilM->uploadPhoto($_FILES["Img"]["tmp_name"]),
+                'Img' => $_FILES["Img"]["name"],
+                // 'image' => $_FILES['image']['name'],
                 'nStep' => $_POST['nStep']
             ];
             
-            $this->profilM->addRecites($data);
-            header('location:' . URLROOT . '/ProfilController/steps');
+            // $this->profilM->addRecites($data);
+            // header('location:' . URLROOT . '/ProfilController/steps');
+
+            if($this->uploadPhoto($image)===true){
+                if( $this->profilM->addRecites($data) ){
+                  
+                  header('location:'.URLROOT .'/ProfilController/steps');
+                } 
+                else{
+                  die('Something went wrong');
+                }
+            }
+            else{
+               die('Something went wrong');
+            }
         }
         else {
             $this->view('UsersView/insert');
@@ -83,26 +100,83 @@ class ProfilController extends Controller
         header('location:' . URLROOT . '/ProfilController/pageProfil');
     }
 
-    public function update($id)
+    // public function update($id)
+    // {
+    //     if (isset($_POST['update'])) {
+    //         $data = [
+    //             'id' => $id,
+    //             'pTime' => $_POST['time'],
+    //             'upTitle' => $_POST['Title'],
+    //             'Descp' => $_POST['Descp'],
+    //             'Img' => $_POST['Img'],
+    //             'nStep' => $_POST['nStep']
+    //         ];
+    //         $this->profilM->updateRecite($data);
+    //         header('location:' . URLROOT . '/ProfilController/pageProfil');
+    //     }
+    //     else {
+    //         $var = $this->profilM->getReciteById($id);
+    //         $this->view('UsersView/update', $var);
+    //     }
+
+    // }
+    public function edit($id)
+    {
+        $edit = $this->profilM->getReciteById($id);
+        $this->view('UsersView/update', $edit);
+    }
+
+    public function update() 
     {
         if (isset($_POST['update'])) {
-            $data = [
-                'id' => $id,
-                'pTime' => $_POST['time'],
-                'upTitle' => $_POST['Title'],
-                'Descp' => $_POST['Descp'],
-                'Img' => $_POST['Img'],
-                'nStep' => $_POST['nStep']
-            ];
-            $this->profilM->updateRecite($data);
-            header('location:' . URLROOT . '/ProfilController/pageProfil');
+            if (!empty($_FILES['Img']) && !empty($_POST['Title']) && !empty($_POST['Descp']) && !empty($_POST['time']) && !empty($_POST['nStep'])) {
+      
+                $new_image = $_FILES['Img']['tmp_name'];
+                $data = [
+                    'id' => $_POST['id'],
+                    'pTime' => $_POST['time'],
+                    'old_image' => $_POST['old_image'],
+                    'upTitle' => $_POST['Title'],
+                    'Descp' => $_POST['Descp'],
+                    'image' => $_FILES['Img']['name'],
+                    'nStep' => $_POST['nStep']
+                ];
+                // var_dump($data);
+                
+                $old_image = $data['old_image'];
+                $path="C:\\xampp\htdocs\projet_fils_rouge\public\img/$old_image";
+                chown($path, 666);
+            //    var_dump($old_image);
+            //    die();
+                
+                if ($this->uploadPhoto($new_image) === true) {
+                    $this->profilM->updateRecite($data);
+                    
+                    header('location:' . URLROOT . '/ProfilController/pageProfil');
+                }
+                else{
+                    echo"hello yguysguydgc";
+                }
+            }
+        }
+    }
+      
+      
+      public function uploadPhoto($image)
+      {    
+        $dir = "C:\\xampp\htdocs\projet-fil-rouge\public\img";
+        $name = str_replace(' ','-',strtolower($_FILES["Img"]["name"]));
+        $type = $_FILES["Img"]["type"];
+        if(move_uploaded_file($image,$dir."/".$name)) {
+            return true;    
         }
         else {
-            $var = $this->profilM->getReciteById($id);
-            $this->view('UsersView/update', $var);
-        }
-
+            return false;
+        } 
     }
+
+
+
 
     public function updateP($user_id)
     {
