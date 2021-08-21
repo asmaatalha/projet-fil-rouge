@@ -69,7 +69,7 @@ body{
     font-family: Segoe UI Emoji;
     text-align: center;
 }
-.hii{
+.link1{
     text-align: center !important;
     border:solid rgb(0, 0, 0);
     width: 150px;
@@ -93,11 +93,11 @@ body{
 .formLogin h1{
     text-align: center;
 }
-.hii1{
+.link2{
     text-align: center;
     border:solid rgb(0, 0, 0);
     width: 150px;
-    height: 140%;
+    height: 120%;
     border-radius: 80px;
     line-height: 2.2;
     background-color: #FD5A34;
@@ -105,11 +105,15 @@ body{
 }
 .an_introduction2{
     display: grid;
-    grid-template-rows: 30% 30% 15%;
+    /* grid-template-rows: 30% 30% 15%; */
     grid-row-gap: 10%;
 }
 .an_introduction2 h5{
     line-height: 2;
     font-family: Segoe UI Emoji;
     text-align: center;
+}
+.forms1{
+    display: grid;
+    grid-template-rows: 40%;    
 }

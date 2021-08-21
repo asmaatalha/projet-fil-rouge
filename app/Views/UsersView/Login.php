@@ -2,7 +2,7 @@
 
     <div class="formLogin ml-auto my-5">
 
-        <div class="forms">
+        <div class="forms1">
             <h1>sign in</h1>
 
             <form action="<?php echo URLROOT; ?>/UserController/Login" method="post">
@@ -27,7 +27,7 @@
 
             <h5>Enter Your Personal Details And Start Journey With Us</h5>
 
-            <div class="hii1">
+            <div class="link2">
                 <a href="<?php echo URLROOT;?>/UserController/SignUp">SignUp</a> 
             </div>
 

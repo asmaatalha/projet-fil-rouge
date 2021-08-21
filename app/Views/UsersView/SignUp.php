@@ -9,7 +9,7 @@
         Please Login With Your 
         Personal Informations</h5>
 
-        <div class="hii">
+        <div class="link1">
             <a href="<?php echo URLROOT;?>/UsersView/Login">SignIn</a>
         </div>
 
