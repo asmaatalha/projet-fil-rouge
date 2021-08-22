@@ -117,3 +117,24 @@ body{
     display: grid;
     grid-template-rows: 40%;    
 }
+
+/* page insert */
+.add1 h1{
+    font-family: SimSun;
+}
+.cart_insert{
+    display: grid;
+    grid-template-rows: 18% 80%;
+}
+.insertR{
+    display: grid;
+    grid-template-rows: 15% 26% 14% 14% 14% 14%; /* =97 */
+    grid-row-gap: 3%;
+    line-height: 2;
+    font-family: Sitka Text;
+    font-size: 140%;
+}
+.insertR input[type="submit"]{
+    width: 20%;
+    border-radius: 30px;
+}
