@@ -36,7 +36,7 @@ class ProfilController extends Controller
     public function insert()
     {
         $this->Session->startSession();
-        $image = $_FILES['Img']['tmp_name'];
+        // $image = $_FILES['Img']['tmp_name'];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
@@ -44,25 +44,11 @@ class ProfilController extends Controller
                 'Title' => $_POST['Title'],
                 'Descp' => $_POST['Descp'],
                 'Img' => $_FILES["Img"]["name"],
-                // 'image' => $_FILES['image']['name'],
                 'nStep' => $_POST['nStep']
             ];
             
-            // $this->profilM->addRecites($data);
-            // header('location:' . URLROOT . '/ProfilController/steps');
-
-            if($this->uploadPhoto($image)===true){
-                if( $this->profilM->addRecites($data) ){
-                  
-                  header('location:'.URLROOT .'/ProfilController/steps');
-                } 
-                else{
-                  die('Something went wrong');
-                }
-            }
-            else{
-               die('Something went wrong');
-            }
+            $this->profilM->addRecites($data);
+            header('location:' . URLROOT . '/ProfilController/steps');
         }
         else {
             $this->view('UsersView/insert');
