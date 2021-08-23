@@ -6,7 +6,7 @@
         <h1>Add Recite</h1>
     </div>
 
-    <div class="form_insert">
+    <div class="">
 
         <form class="insertR" action="" method="post" enctype="multipart/form-data">
 

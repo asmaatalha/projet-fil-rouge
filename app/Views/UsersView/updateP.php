@@ -1,24 +1,47 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
-<?php require APPROOT . '/views/inc/navbarP.php'; ?>
 
-<div>
-    <form action="">
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" value="<?= $data->email ?>" placeholder="Email">
+<div class="update">
+    <!-- <div>
+       
+    </div> -->
 
-        <label for="email">Password :</label>
-        <input type="email" id="email" name="email" value="<?= $data->password ?>" placeholder="Pass">
+    <div class="forms2 pt-5">
 
-        <label for="email">username :</label>
-        <input type="email" id="email" name="email" value="<?= $data->username ?>" placeholder="Email">
+        <h1>Update Profil</h1>
 
-        <label for="email">Last Name :</label>
-        <input type="email" id="email" name="email" value="<?= $data->Last_name ?>" placeholder="Email">
+        <form action="" method="post" class="pt-3 upd">
 
-        <label for="email">First Name :</label>
-        <input type="email" id="email" name="email" value="<?= $data->First_name ?>" placeholder="Email">
-        
-    </form>
+            <div class="form-row">
+                <div class="form-group col">
+                    <!-- <label>First Name :</label> -->
+                    <input class="form-control" type="text" name="fname" value="<?= $data->First_name ?>" placeholder="First Name">
+                </div>
+                <div class="form-group col">
+                    <!-- <label>Last Name :</label> -->
+                    <input class="form-control" type="text" name="lname" value="<?= $data->Last_name ?>" placeholder="Last Name">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <!-- <label>username :</label> -->
+                <input class="form-control" type="text" name="name" value="<?= $data->username ?>" placeholder="Username">
+            </div>
+
+            <div class="form-group">
+                <!-- <label>Email :</label> -->
+                <input class="form-control" type="email" name="email" value="<?= $data->email ?>" placeholder="Email">
+            </div>
+
+            <div class="form-group">
+                <!-- <label>Password :</label> -->
+                <input class="form-control" type="password" name="password" value="<?= $data->password ?>" placeholder="Password">
+            </div>
+
+            <div class="">
+                <input type="submit" class="button" name="submit" value="modifier">
+            </div>
+
+        </form>
+    </div>
+    
 </div>
-
-<?php require APPROOT . '/views/inc/footer.php'; ?>

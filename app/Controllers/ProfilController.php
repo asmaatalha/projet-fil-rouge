@@ -7,8 +7,6 @@ class ProfilController extends Controller
         $this->profilM = $this->model('ProfilModel');
 
         $this->Session = new Session;
-
-        
     }
 
     public function pageProfil()
@@ -100,26 +98,6 @@ class ProfilController extends Controller
         header('location:' . URLROOT . '/ProfilController/pageProfil');
     }
 
-    // public function update($id)
-    // {
-    //     if (isset($_POST['update'])) {
-    //         $data = [
-    //             'id' => $id,
-    //             'pTime' => $_POST['time'],
-    //             'upTitle' => $_POST['Title'],
-    //             'Descp' => $_POST['Descp'],
-    //             'Img' => $_POST['Img'],
-    //             'nStep' => $_POST['nStep']
-    //         ];
-    //         $this->profilM->updateRecite($data);
-    //         header('location:' . URLROOT . '/ProfilController/pageProfil');
-    //     }
-    //     else {
-    //         $var = $this->profilM->getReciteById($id);
-    //         $this->view('UsersView/update', $var);
-    //     }
-
-    // }
     public function edit($id)
     {
         $edit = $this->profilM->getReciteById($id);
@@ -160,10 +138,9 @@ class ProfilController extends Controller
             }
         }
     }
-      
-      
-      public function uploadPhoto($image)
-      {    
+
+    public function uploadPhoto($image)
+    {    
         $dir = "C:\\xampp\htdocs\projet-fil-rouge\public\img";
         $name = str_replace(' ','-',strtolower($_FILES["Img"]["name"]));
         $type = $_FILES["Img"]["type"];
@@ -174,9 +151,6 @@ class ProfilController extends Controller
             return false;
         } 
     }
-
-
-
 
     public function updateP($user_id)
     {
@@ -195,7 +169,6 @@ class ProfilController extends Controller
             }
         }else {
             $upd = $this->profilM->getUserById($user_id);
-            var_dump($upd);
             $this->view('UsersView/updateP', $upd);
         }
     }

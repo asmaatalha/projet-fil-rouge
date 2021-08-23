@@ -138,3 +138,14 @@ body{
     width: 20%;
     border-radius: 30px;
 }
+
+/* update profile */
+.forms2 h1{
+    font-family: Sitka Text;
+    text-align: center;
+}
+.upd{
+    /* border: solid darkgreen; */
+    width: 80%;
+    padding-left: 20%;
+}
