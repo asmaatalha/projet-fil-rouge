@@ -7,19 +7,6 @@ class ProfilModel
         $this->database = new Database;        
     }
 
-    public function uploadPhoto($image)
-    { 
-        $dir = "C:\\xampp\htdocs\projet-fil-rouge\public\img";
-        $name = str_replace(' ','-',strtolower($_FILES["Img"]["name"]));
-        $type = $_FILES["Img"]["type"];
-        if(move_uploaded_file($image,$dir."/".$name)) {
-            return $name;    
-        }
-        else {
-            return false;
-        }
-    }
-
     public function selectR($id)
     {
         $this->database->query('SELECT * FROM recite R, user U WHERE R.userId = U.userId AND R.userId = :id');
@@ -59,12 +46,6 @@ class ProfilModel
         return $this->database->single();
 
     }
-
-    // public function selectS()
-    // {
-    //     $this->database->query('SELECT * FROM steps');
-    //     return $this->database->single();
-    // }
 
     public function addRecites($insertR)
     {
@@ -124,20 +105,6 @@ class ProfilModel
         $this->database->bind(':id', $upd['id']);
 
         $this->database->execute();
-
-
-        // var_dump($data);
-        // $this->db->query("UPDATE `pharmacy` SET `name_pharma` = :name_pharma, `localisation`= :localisation,`image`=:image , `phone`= :phone  WHERE id_pharmacy = :id_pharmacy");
-        // $this->db->bind(':name_pharma', $data['name_pharma']);
-        // $this->db->bind(':localisation', $data['localisation']);
-        // $this->db->bind(':image', $data['image']);
-        // $this->db->bind(':phone', $data['phone']);
-        // $this->db->bind(':id_pharmacy', $data['id_pharmacy']);
-        // if ($this->db->execute()) {
-        //     return true;
-        // } else {
-        //     return false;
-        // }
     }
 
     public function updateProfil($profil)

@@ -1,6 +1,6 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
-<div class="">
+<div class="pt-5">
   <form class="insertR" action="<?php echo URLROOT;?>/ProfilController/update" method="post" enctype="multipart/form-data">
     
     <div>
