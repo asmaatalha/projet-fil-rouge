@@ -61,8 +61,6 @@ body{
 }
 .an_introduction1{
     display: grid;
-    /* grid-template-rows: 20% 20% 20%;
-    grid-row-gap: 8%; */
 }
 .an_introduction1 h5{
     line-height: 2;
@@ -105,7 +103,6 @@ body{
 }
 .an_introduction2{
     display: grid;
-    /* grid-template-rows: 30% 30% 15%; */
     grid-row-gap: 10%;
 }
 .an_introduction2 h5{
@@ -145,7 +142,8 @@ body{
     text-align: center;
 }
 .upd{
-    /* border: solid darkgreen; */
     width: 80%;
     padding-left: 20%;
 }
+
+/* update recite */

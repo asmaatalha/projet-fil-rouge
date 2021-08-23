@@ -17,16 +17,16 @@
             
             <div>
                 <label for="desc">Description: </label>
-                <textarea type="text" name="Descp" ></textarea>
+                <textarea data-target="description" type="text" name="Descp"></textarea>
             </div>
 
             <div>
-                <label for="img">Img: </label>
+                <label for="img">image: </label>
                 <input type="file" name="Img">
             </div>
 
             <div>
-                <label for="appt">Select a time:</label>
+                <label for="appt">Select time:</label>
                 <input type="time" id="appt" name="time">
             </div>
 
